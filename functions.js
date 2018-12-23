@@ -6,6 +6,7 @@
  */
 function greet(name) {
   // Your code here
+  console.log(`Welcome ${name}`)
 }
 
 /**
@@ -15,6 +16,11 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
+  if(n %2 !==0){
+    return true 
+  }else
+    return false
+
 }
 
 /**
@@ -30,6 +36,8 @@ function isOdd(n) {
  */
 function oddsSmallerThan(n) {
   // Your code here
+  return ((n/2) -(n/2) % 1)
+
 }
 
 /**
@@ -44,6 +52,11 @@ function oddsSmallerThan(n) {
  */
 function squareOrDouble(n) {
   // Your code here
+  if (n%2 === 0)
+  return n*2 
+  else
+  return n**2 
+
 }
 
 /**
@@ -66,6 +79,20 @@ function squareOrDouble(n) {
  */
 function ageFromCivilID(civilID) {
   // Your code here
+  const n = civilID.toString();
+  const p = n[0]
+  const yy = n[1] + n[2]
+  if (p ==='1')
+    c = '18'
+  else if (p ==='2')
+    c= '19'
+  else if (p ==='3')
+    c= '20'
+   const year2 = c + yy
+   var dateObj = new Date();
+   var year = dateObj.getUTCFullYear();
+
+return(year-year2)
 }
 
 /**
@@ -81,6 +108,12 @@ function ageFromCivilID(civilID) {
  */
 function canVoteInKuwait(civilID, isKuwaiti, isRoyal) {
   // Your code here
+  const x = civilID.toString();
+  const age = ageFromCivilID(x)
+  if ( age >= 21 && isKuwaiti == true  && isRoyal == false)
+   return true
+  else 
+   return false
 }
 
 module.exports = {
